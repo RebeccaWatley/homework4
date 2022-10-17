@@ -8,7 +8,7 @@
   </head>
   <body>
     <h1>Add Patient</h1>
-<form method="post" action="instructor-add-save.php">
+<form method="post" action="patient-add-save.php">
   <div class="mb-3">
     <label for="FirstName" class="form-label">First Name</label>
     <input type="text" class="form-control" id="PatientID" aria-describedby="nameHelp" name="pName">
