@@ -75,6 +75,7 @@ if ($result->num_rows > 0) {
     <td><?=$row["LastName"]?></td>
     <td><?=$row["Gender"]?></td>
     
+    <td>
     <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#editPatient<?=$row["PatientID"]?>">
                 Edit
               </button>
@@ -107,7 +108,9 @@ if ($result->num_rows > 0) {
                 <input type="hidden" name="saveType" value="Delete">
                 <input type="submit" class="btn" onclick="return confirm('Are you sure?')" value="Delete">
               </form>
-            </td>    
+            </td>  
+   </td>    
+
   </tr>
 <?php
   }
