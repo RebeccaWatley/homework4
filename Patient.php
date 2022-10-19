@@ -90,10 +90,10 @@ if ($result->num_rows > 0) {
                       <form method="post" action="">
                         <div class="mb-3">
                           <label for="editPatient<?=$row["PatientID"]?>Name" class="form-label">Name</label>
-                          <input type="text" class="form-control" id="editPatient<?=$row["PatientID"]?>Name" aria-describedby="editPatient<?=$row["PatientID"]?>Help" name="iName" value="<?=$row['FirstName']?>">
+                          <input type="text" class="form-control" id="editPatient<?=$row["PatientID"]?>Name" aria-describedby="editPatient<?=$row["PatientID"]?>Help" name="pName" value="<?=$row['FirstName']?>">
                           <div id="editPatient<?=$row["PatientID"]?>Help" class="form-text">Enter the Patient's name.</div>
                         </div>
-                        <input type="hidden" name="iid" value="<?=$row['PatientID']?>">
+                        <input type="hidden" name="pid" value="<?=$row['PatientID']?>">
                         <input type="hidden" name="saveType" value="Edit">
                         <input type="submit" class="btn btn-primary" value="Submit">
                       </form>
@@ -104,7 +104,7 @@ if ($result->num_rows > 0) {
             </td>
             <td>
               <form method="post" action="">
-                <input type="hidden" name="iid" value="<?=$row["PatientID"]?>" />
+                <input type="hidden" name="pid" value="<?=$row["PatientID"]?>" />
                 <input type="hidden" name="saveType" value="Delete">
                 <input type="submit" class="btn" onclick="return confirm('Are you sure?')" value="Delete">
               </form>
