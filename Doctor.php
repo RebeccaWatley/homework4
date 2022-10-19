@@ -83,6 +83,8 @@ if ($result->num_rows > 0) {
         <input type="submit" value="Edit" />
       </form>
     </td>
+    <td>
+      
   <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#editDoctor<?=$row["DoctorID"]?>">
                 Edit
               </button>
@@ -111,7 +113,7 @@ if ($result->num_rows > 0) {
             </td>
             <td>
               <form method="post" action="">
-                <input type="hidden" name="iid" value="<?=$row["DoctortID"]?>" />
+                <input type="hidden" name="iid" value="<?=$row["DoctorID"]?>" />
                 <input type="hidden" name="saveType" value="Delete">
                 <input type="submit" class="btn" onclick="return confirm('Are you sure?')" value="Delete">
               </form>
