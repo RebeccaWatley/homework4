@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     case 'Delete':
       $sqlDelete = "delete from Patient where PatientID=?";
       $stmtDelete = $conn->prepare($sqlDelete);
-      $stmtDelete->bind_param("p", $_POST['pid']);
+      $stmtDelete->bind_param("i", $_POST['pid']);
       $stmtDelete->execute();
       echo '<div class="alert alert-success" role="alert">Patient deleted.</div>';
       break;
