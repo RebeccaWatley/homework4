@@ -83,8 +83,8 @@ if ($result->num_rows > 0) {
         <input type="submit" value="Edit" />
       </form>
     </td>
-    <td>
-      
+    
+   <td>      
   <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#editDoctor<?=$row["DoctorID"]?>">
                 Edit
               </button>
