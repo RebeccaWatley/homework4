@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     case 'Edit':
       $sqlEdit = "update Patient set FirstName=? where PatientID=?";
       $stmtEdit = $conn->prepare($sqlEdit);
-      $stmtEdit->bind_param("pi", $_POST['pName'], $_POST['pid']);
+      $stmtEdit->bind_param("si", $_POST['pName'], $_POST['pid']);
       $stmtEdit->execute();
       echo '<div class="alert alert-success" role="alert">Patient edited.</div>';
       break;
