@@ -27,21 +27,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     case 'Add':
       $sqlAdd = "insert into Patient (FirstName) value (?)";
       $stmtAdd = $conn->prepare($sqlAdd);
-      $stmtAdd->bind_param("s", $_POST['pName']);
+      $stmtAdd->bind_param("s", $_POST['iName']);
       $stmtAdd->execute();
       echo '<div class="alert alert-success" role="alert">New patient added.</div>';
       break;
     case 'Edit':
       $sqlEdit = "update Patient set FirstName=? where PatientID=?";
       $stmtEdit = $conn->prepare($sqlEdit);
-      $stmtEdit->bind_param("si", $_POST['pName'], $_POST['pid']);
+      $stmtEdit->bind_param("si", $_POST['iName'], $_POST['iid']);
       $stmtEdit->execute();
       echo '<div class="alert alert-success" role="alert">Patient edited.</div>';
       break;
     case 'Delete':
       $sqlDelete = "delete from Patient where PatientID=?";
       $stmtDelete = $conn->prepare($sqlDelete);
-      $stmtDelete->bind_param("i", $_POST['pid']);
+      $stmtDelete->bind_param("i", $_POST['iid']);
       $stmtDelete->execute();
       echo '<div class="alert alert-success" role="alert">Patient deleted.</div>';
       break;
@@ -90,10 +90,10 @@ if ($result->num_rows > 0) {
                       <form method="post" action="">
                         <div class="mb-3">
                           <label for="editPatient<?=$row["PatientID"]?>Name" class="form-label">Name</label>
-                          <input type="text" class="form-control" id="editPatient<?=$row["PatientID"]?>Name" aria-describedby="editPatient<?=$row["PatientID"]?>Help" name="pName" value="<?=$row['FirstName']?>">
+                          <input type="text" class="form-control" id="editPatient<?=$row["PatientID"]?>Name" aria-describedby="editPatient<?=$row["PatientID"]?>Help" name="iName" value="<?=$row['FirstName']?>">
                           <div id="editPatient<?=$row["PatientID"]?>Help" class="form-text">Enter the Patient's name.</div>
                         </div>
-                        <input type="hidden" name="pid" value="<?=$row['PatientID']?>">
+                        <input type="hidden" name="iid" value="<?=$row['PatientID']?>">
                         <input type="hidden" name="saveType" value="Edit">
                         <input type="submit" class="btn btn-primary" value="Submit">
                       </form>
@@ -104,7 +104,7 @@ if ($result->num_rows > 0) {
             </td>
             <td>
               <form method="post" action="">
-                <input type="hidden" name="pid" value="<?=$row["PatientID"]?>" />
+                <input type="hidden" name="iid" value="<?=$row["PatientID"]?>" />
                 <input type="hidden" name="saveType" value="Delete">
                 <input type="submit" class="btn" onclick="return confirm('Are you sure?')" value="Delete">
               </form>
