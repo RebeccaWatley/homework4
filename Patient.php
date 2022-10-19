@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     case 'Add':
       $sqlAdd = "insert into Patient (FirstName) value (?)";
       $stmtAdd = $conn->prepare($sqlAdd);
-      $stmtAdd->bind_param("p", $_POST['pName']);
+      $stmtAdd->bind_param("s", $_POST['pName']);
       $stmtAdd->execute();
       echo '<div class="alert alert-success" role="alert">New patient added.</div>';
       break;
