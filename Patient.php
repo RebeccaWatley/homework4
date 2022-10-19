@@ -108,8 +108,9 @@ if ($result->num_rows > 0) {
                 <input type="hidden" name="saveType" value="Delete">
                 <input type="submit" class="btn" onclick="return confirm('Are you sure?')" value="Delete">
               </form>
-            </td>  
-  </tr>
+            </td> 
+  </td>
+  
 <?php
   }
 } else {
