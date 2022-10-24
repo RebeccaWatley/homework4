@@ -112,9 +112,6 @@ if ($result->num_rows > 0) {
 <?php
     }
 ?>
-   
-                        <input type="hidden" name="id" value="<?=$row['ApptID']?>">
-                        <button type="submit" class="btn btn-primary">Submit</button>
                         <input type="hidden" name="iid" value="<?=$row['ApptID']?>">
                         <input type="hidden" name="saveType" value="Edit">
                         <input type="submit" class="btn btn-primary" value="Submit">
