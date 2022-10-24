@@ -98,6 +98,20 @@ if ($result->num_rows > 0) {
                           <label for="AppointmentDayList" class="form-label">ApptDay</label>
                           <select class="form-select" aria-label="Select AppointmentDay" id="AppointmentDayList" name="aid"> </div>
                         </div>
+       <?php
+    $ApptSql = "select * from Appointment order by ApptDay";
+    $ApptResult = $conn->query($ApptSql);
+    while($ApptRow = $ApptResult->fetch_assoc()) {
+      if ($ApptRow['ApptID'] == $row['ApptID']) {
+        $selText = " selected";
+      } else {
+        $selText = "";
+      }
+?>
+  <option value="<?=$ApptRow['ApptID']?>"<?=$selText?>><?=$ApptRow['ApptDay']?></option>                         
+<?php
+    }
+?>
                         <input type="hidden" name="iid" value="<?=$row['ApptID']?>">
                         <input type="hidden" name="saveType" value="Edit">
                         <input type="submit" class="btn btn-primary" value="Submit">
@@ -116,20 +130,6 @@ if ($result->num_rows > 0) {
             </td> 
   </td>        
   </tr>
-<?php
-    $ApptSql = "select * from Appointment order by ApptDay";
-    $ApptResult = $conn->query($ApptSql);
-    while($ApptRow = $ApptResult->fetch_assoc()) {
-      if ($ApptRow['ApptID'] == $row['ApptID']) {
-        $selText = " selected";
-      } else {
-        $selText = "";
-      }
-?>
-  <option value="<?=$ApptRow['ApptID']?>"<?=$selText?>><?=$ApptRow['ApptDay']?></option>                         
-<?php
-    }
-?>
            
 <?php
   }
