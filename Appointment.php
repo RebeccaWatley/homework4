@@ -94,6 +94,10 @@ if ($result->num_rows > 0) {
                           <input type="text" class="form-control" id="editAppointment<?=$row["ApptID"]?>Name" aria-describedby="editAppointment<?=$row["ApptID"]?>Help" name="iName" value="<?=$row['ApptDay']?>">
                           <div id="editAppointment<?=$row["ApptID"]?>Help" class="form-text">Enter the appointment's day.</div>
                         </div>
+                        <div class="mb-3">
+                          <label for="AppointmentDayList" class="form-label">ApptDay</label>
+                          <select class="form-select" aria-label="Select AppointmentDay" id="AppointmentDayList" name="aid"> </div>
+                        </div>
                         <input type="hidden" name="iid" value="<?=$row['ApptID']?>">
                         <input type="hidden" name="saveType" value="Edit">
                         <input type="submit" class="btn btn-primary" value="Submit">
