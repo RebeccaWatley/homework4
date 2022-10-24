@@ -23,7 +23,7 @@ if ($conn->connect_error) {
 
 $sql = "SELECT DoctorID, DoctorName from Doctor where DoctorID=?";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("p", $_POST['did']);
+$stmt->bind_param("d", $_POST['did']);
 $stmt->execute();
 $result = $stmt->get_result();
 
