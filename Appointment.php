@@ -95,7 +95,7 @@ if ($result->num_rows > 0) {
                           <div id="editAppointment<?=$row["ApptID"]?>Help" class="form-text">Enter the appointment's day.</div>
                         </div>
                         <div class="mb-3">
-                          <label for="ApptIDList" class="form-label">Appt ID</label>
+                          <label for="ApptIDList" class="form-label">Appt Day</label>
                           <select class="form-select" aria-label="Select ApptID" id="ApptIDList" name="id">
                         </div>
        <?php
