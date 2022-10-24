@@ -37,6 +37,36 @@ if ($result->num_rows > 0) {
     <input type="text" class="form-control" id="ApptDay" aria-describedby="nameHelp" name="aName" value="<?=$row['ApptDay']?>">
     <div id="nameHelp" class="form-text">Enter the Appointment's day.</div>
   </div>
+  <div class="mb-3">
+  <label for="AppointmentDayList" class="form-label">ApptDay</label>
+<select class="form-select" aria-label="Select AppointmentDay" id="AppointmentDayList" name="aid">
+<?php
+    $ApptSql = "select * from Appointment order by ApptDay";
+    $ApptResult = $conn->query($ApptSql);
+    while($ApptRow = $ApptResult->fetch_assoc()) {
+      if ($ApptRow['ApptID'] == $row['ApptID']) {
+        $selText = " selected";
+      } else {
+        $selText = "";
+      }
+?>
+  <option value="<?=$ApptRow['ApptID']?>"<?=$selText?>><?=$ApptRow['ApptDay']?></option>
+<?php
+    }
+?>
+ 
+</select>
+  </div>
+  <input type="hidden" name="id" value="<?=$row['ApptID']?>">
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<?php
+  }
+} else {
+  echo "0 results";
+}
+$conn->close();
+?>
   <input type="hidden" name="aid" value="<?=$row['ApptID']?>">
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
