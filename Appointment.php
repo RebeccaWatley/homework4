@@ -116,8 +116,21 @@ if ($result->num_rows > 0) {
             </td> 
   </td>        
   </tr>
-      
-      
+<?php
+    $ApptSql = "select * from Appointment order by ApptDay";
+    $ApptResult = $conn->query($ApptSql);
+    while($ApptRow = $ApptResult->fetch_assoc()) {
+      if ($ApptRow['ApptID'] == $row['ApptID']) {
+        $selText = " selected";
+      } else {
+        $selText = "";
+      }
+?>
+  <option value="<?=$ApptRow['ApptID']?>"<?=$selText?>><?=$ApptRow['ApptDay']?></option>                         
+<?php
+    }
+?>
+           
 <?php
   }
 } else {
