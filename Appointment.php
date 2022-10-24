@@ -95,20 +95,20 @@ if ($result->num_rows > 0) {
                           <div id="editAppointment<?=$row["ApptID"]?>Help" class="form-text">Enter the appointment's day.</div>
                         </div>
                         <div class="mb-3">
-                          <label for="DoctorIDList" class="form-label">Doctor ID</label>
-                          <select class="form-select" aria-label="Select DoctorID" id="DoctorIDList" name="did">
+                          <label for="ApptIDList" class="form-label">Appt ID</label>
+                          <select class="form-select" aria-label="Select ApptID" id="ApptIDList" name="id">
                         </div>
        <?php
-    $ApptSql = "select * from Appointment order by DoctorID, ApptDay";
+    $ApptSql = "select * from Appointment order by ApptDay";
     $ApptResult = $conn->query($ApptSql);
     while($ApptRow = $ApptResult->fetch_assoc()) {
-      if ($ApptRow['DoctorID'] == $row['DoctorID']) {
+      if ($ApptRow['ApptID'] == $row['ApptID']) {
         $selText = " selected";
       } else {
         $selText = "";
       }
 ?>
-  <option value="<?=$ApptRow['DoctorID']?>"<?=$selText?>><?=$ApptRow['DoctorID']?></option>                         
+  <option value="<?=$ApptRow['ApptID']?>"<?=$selText?>><?=$ApptRow['ApptDay']?></option>                         
 <?php
     }
 ?>
