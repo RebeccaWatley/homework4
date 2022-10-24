@@ -108,7 +108,7 @@ if ($result->num_rows > 0) {
         $selText = "";
       }
 ?>
-  <option value="<?=$ApptRow['DoctorID']?>"<?=$selText?>><?=$ApptRow['ApptDay']?></option>                         
+  <option value="<?=$ApptRow['DoctorID']?>"<?=$selText?>><?=$ApptRow['DoctorID']?></option>                         
 <?php
     }
 ?>
