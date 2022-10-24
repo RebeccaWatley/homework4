@@ -96,7 +96,10 @@ if ($result->num_rows > 0) {
                         </div>
                         <div class="mb-3">
                           <label for="AppointmentDayList" class="form-label">ApptDay</label>
-                          <select class="form-select" aria-label="Select AppointmentDay" id="AppointmentDayList" name="aid"> </select>
+                          <select class="form-select" aria-label="Select AppointmentDay" id="AppointmentDayList" name="aid">
+                          </select>
+                          <input type="hidden" name="id" value="<?=$row['ApptID']?>">
+                          <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
        <?php
     $ApptSql = "select * from Appointment order by ApptDay";
