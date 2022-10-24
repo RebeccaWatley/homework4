@@ -128,7 +128,7 @@ $conn->close();
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 <?php
-  }
+  
 } else {
   echo "0 results";
 }
