@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $stmtAdd = $conn->prepare($sqlAdd);
       $stmtAdd->bind_param("s", $_POST['iName']);
       $stmtAdd->execute();
-      echo '<div class="alert alert-success" role="alert">New patient added.</div>';
+      echo '<div class="alert alert-success" role="alert">New doctor added.</div>';
       break;
     case 'Edit':
       $sqlEdit = "update Doctor set DoctorName=? where DoctorID=?";
