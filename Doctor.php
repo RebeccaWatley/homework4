@@ -77,13 +77,6 @@ if ($result->num_rows > 0) {
         <input type="submit" value="Appointment" />
       </form>
     </td>
-    <td>
-      <form method="post" action="doctor-edit.php">
-        <input type="hidden" name="id" value="<?=$row["DoctorID"]?>" />
-        <input type="submit" value="Edit" />
-      </form>
-    </td>
-    
    <td>      
   <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#editDoctor<?=$row["DoctorID"]?>">
                 Edit
