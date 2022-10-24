@@ -118,7 +118,7 @@ if ($result->num_rows > 0) {
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 <?php
-  }
+  
 } else {
   echo "0 results";
 }
@@ -128,8 +128,8 @@ $conn->close();
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 <?php
-  
-else {
+ 
+} else {
   echo "0 results";
 }
 $conn->close();
