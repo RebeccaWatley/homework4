@@ -119,7 +119,7 @@ if ($result->num_rows > 0) {
 </form>
 <?php
   
-} else {
+{
   echo "0 results";
 }
 $conn->close();
@@ -133,6 +133,7 @@ $conn->close();
   echo "0 results";
 }
 $conn->close();
+    
 ?>
                         <input type="hidden" name="iid" value="<?=$row['ApptID']?>">
                         <input type="hidden" name="saveType" value="Edit">
