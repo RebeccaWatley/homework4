@@ -72,7 +72,7 @@ if ($result->num_rows > 0) {
   <tr>
     <td><?=$row["ApptID"]?></td>
     <td><?=$row["ApptDay"]?></td>
-    <td><?=$row["DoctorName"]?></td>
+    <td><?=$row["DoctorID"]?></td>
     <td><?=$row["PatientID"]?></td>
     
  <td>
