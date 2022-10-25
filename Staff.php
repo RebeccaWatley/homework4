@@ -137,7 +137,7 @@ $conn->close();
               <form method="post" action="">
                 <div class="mb-3">
                   <label for="StaffName" class="form-label">Name</label>
-                  <input type="text" class="form-control" id="StaffName" aria-describedby="nameHelp" name="iName">
+                  <input type="text" class="form-control" id="StaffName" aria-describedby="nameHelp" name="sName">
                   <div id="nameHelp" class="form-text">Enter the staff's name.</div>
                 </div>
                 <input type="hidden" name="saveType" value="Add">
