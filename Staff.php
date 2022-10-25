@@ -24,11 +24,11 @@ if ($conn->connect_error) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   switch ($_POST['saveType']) {
     case 'Add':
-      $sqlAdd = "insert into Patient (FirstName) value (?)";
+      $sqlAdd = "insert into Staff (StaffName) value (?)";
       $stmtAdd = $conn->prepare($sqlAdd);
       $stmtAdd->bind_param("s", $_POST['sName']);
       $stmtAdd->execute();
-      echo '<div class="alert alert-success" role="alert">New patient added.</div>';
+      echo '<div class="alert alert-success" role="alert">New Staff added.</div>';
       break;
     case 'Edit':
       $sqlEdit = "update Staff set StaffName=? where AdminID=?";
