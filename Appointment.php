@@ -72,8 +72,8 @@ if ($result->num_rows > 0) {
   <tr>
     <td><?=$row["ApptID"]?></td>
     <td><?=$row["ApptDay"]?></td>
-    <td><?=$row["DoctorName"]?></td>
     <td><?=$row["PatientID"]?></td>
+    <td><?=$row["DoctorName"]?></td>
     
  <td>
    
@@ -95,7 +95,7 @@ if ($result->num_rows > 0) {
                           <div id="editAppointment<?=$row["ApptID"]?>Help" class="form-text">Enter the appointment's day.</div>
                         </div>
                         <div class="mb-3">
-                          <label for="DoctorIDList" class="form-label">Doctor ID</label>
+                          <label for="DoctorIDList" class="form-label">DoctorID</label>
                           <select class="form-select" aria-label="SelectDrID" id="DoctorIDList" name="id"> </select>
                         </div>
                         
@@ -103,7 +103,7 @@ if ($result->num_rows > 0) {
     $ApptSql = "select * from Doctor order by DoctorID";
     $ApptResult = $conn->query($ApptSql);
     while($ApptRow = $ApptResult->fetch_assoc()) {
-      if ($ApptRow['DoctorID'] == $row['DoctorID']) {
+      if ($ApptRow['DoctorID'] == $row['DoctorName']) {
         $selText = " selected";
       } else {
         $selText = "";
