@@ -112,7 +112,7 @@ if ($result->num_rows > 0) {
 <?php
     }
 ?>
-                        <input type="hidden" name="id" value="<?=$row['DoctorID']?>
+                        <input type="hidden" name="iid" value="<?=$row['DoctorID']?>">
                         <input type="hidden" name="saveType" value="Edit">
                         <input type="submit" class="btn btn-primary" value="Submit">
                       </form>
