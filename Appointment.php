@@ -96,8 +96,9 @@ if ($result->num_rows > 0) {
                         </div>
                         <div class="mb-3">
                           <label for="DoctorIDList" class="form-label">Doctor ID</label>
-                          <select class="form-select" aria-label="SelectDrID" id="DoctorIDList" name="id">
+                          <select class="form-select" aria-label="SelectDrID" id="DoctorIDList" name="id"> </select>
                         </div>
+                        
        <?php
     $ApptSql = "select * from Doctor order by DoctorID";
     $ApptResult = $conn->query($ApptSql);
