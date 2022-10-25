@@ -72,7 +72,7 @@ if ($result->num_rows > 0) {
   <tr>
     <td><?=$row["ApptID"]?></td>
     <td><?=$row["ApptDay"]?></td>
-    <td><?=$row["DoctorID"]?></td>
+    <td><?=$row["DoctorName"]?></td>
     <td><?=$row["PatientID"]?></td>
     
  <td>
@@ -114,7 +114,7 @@ if ($result->num_rows > 0) {
 <?php
     }
 ?>                         
-                        <input type="hidden" name="iid" value="<?=$row['DoctorID']?>">
+                        <input type="hidden" name="id" value="<?=$row['DoctorID']?>">
                         <input type="hidden" name="saveType" value="Edit">
                         <input type="submit" class="btn btn-primary" value="Submit">
                       </form>
