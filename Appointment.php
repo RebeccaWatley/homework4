@@ -108,9 +108,12 @@ if ($result->num_rows > 0) {
         $selText = "";
       }
 ?>
-  <option value="<?=$ApptRow['DoctorID']?>"<?=$selText?>><?=$ApptRow['DoctorID']?></option>                         
-                          
-                        <input type="hidden" name="did" value="<?=$row['DoctorID']?>">
+  <option value="<?=$ApptRow['DoctorID']?>"<?=$selText?>><?=$ApptRow['DoctorID']?></option>    
+             
+<?php
+    }
+?>                         
+                        <input type="hidden" name="id" value="<?=$row['DoctorID']?>">
                         <input type="hidden" name="saveType" value="Edit">
                         <input type="submit" class="btn btn-primary" value="Submit">
                       </form>
