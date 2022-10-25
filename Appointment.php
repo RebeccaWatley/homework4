@@ -95,24 +95,24 @@ if ($result->num_rows > 0) {
                           <div id="editAppointment<?=$row["ApptID"]?>Help" class="form-text">Enter the appointment's day.</div>
                         </div>
                         <div class="mb-3">
-                          <label for="ApptIDList" class="form-label">Appt Day</label>
-                          <select class="form-select" aria-label="Select ApptID" id="ApptIDList" name="id">
+                          <label for="DoctorIDList" class="form-label">Doctor ID</label>
+                          <select class="form-select" aria-label="SelectDrID" id="DoctorIDList" name="id">
                         </div>
        <?php
-    $ApptSql = "select * from Appointment order by ApptDay";
+    $ApptSql = "select * from Doctor order by DoctorID";
     $ApptResult = $conn->query($ApptSql);
     while($ApptRow = $ApptResult->fetch_assoc()) {
-      if ($ApptRow['ApptID'] == $row['ApptID']) {
+      if ($ApptRow['DoctorID'] == $row['DoctorID']) {
         $selText = " selected";
       } else {
         $selText = "";
       }
 ?>
-  <option value="<?=$ApptRow['ApptID']?>"<?=$selText?>><?=$ApptRow['ApptDay']?></option>                         
+  <option value="<?=$ApptRow['DoctorID']?>"<?=$selText?>><?=$ApptRow['DoctorID']?></option>                         
 <?php
     }
 ?>
-                        <input type="hidden" name="iid" value="<?=$row['ApptID']?>">
+                        <input type="hidden" name="id" value="<?=$row['DoctorID']?>">
                         <input type="hidden" name="saveType" value="Edit">
                         <input type="submit" class="btn btn-primary" value="Submit">
                       </form>
